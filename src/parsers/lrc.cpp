@@ -301,7 +301,15 @@ static ParsedLineContents parse_line_times(std::string_view line)
         }
     }
 
-    return { result, std::string(line.substr(index).data(), line.size() - index) };
+    std::string remaining(line.substr(index).data(), line.size() - index);
+    size_t pos = 0;
+    while((pos = remaining.find("#", pos)) != std::string::npos)
+    {
+        remaining.replace(pos, 1, "\n");
+        pos += 1;
+    }
+
+    return { result, remaining };
 }
 
 static std::vector<LyricDataLine> collapse_concurrent_lines(const std::vector<LyricDataLine>& input)
