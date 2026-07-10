@@ -99,7 +99,7 @@
       <AdditionalDependencies>$(SolutionDir)/../3rdparty/foo_SDK/foobar2000/shared/shared-$(Platform).lib;$(OutDir)libcurl.lib;$(OutDir)nghttp2.lib;bcrypt.lib;Crypt32.lib;d2d1.lib;d3d11.lib;dwrite.lib;dxguid.lib;Iphlpapi.lib;Secur32.lib;windowscodecs.lib;Ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
-      <Command>pwsh $(SolutionDir)generate_version_header.ps1 -output_path $(TargetDir)generated\openlyrics_version_generated.h
+      <Command>powershell $(SolutionDir)generate_version_header.ps1 -output_path $(TargetDir)generated\openlyrics_version_generated.h
 </Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
@@ -129,7 +129,7 @@
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <PreBuildEvent>
-      <Command>pwsh $(SolutionDir)generate_version_header.ps1 -output_path $(TargetDir)generated\openlyrics_version_generated.h
+      <Command>powershell $(SolutionDir)generate_version_header.ps1 -output_path $(TargetDir)generated\openlyrics_version_generated.h
 </Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
@@ -156,7 +156,7 @@
       <AdditionalDependencies>$(SolutionDir)/../3rdparty/foo_SDK/foobar2000/shared/shared-$(Platform).lib;$(OutDir)libcurl.lib;$(OutDir)nghttp2.lib;bcrypt.lib;Crypt32.lib;d2d1.lib;d3d11.lib;dwrite.lib;dxguid.lib;Iphlpapi.lib;Secur32.lib;windowscodecs.lib;Ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
-      <Command>pwsh $(SolutionDir)generate_version_header.ps1 -output_path $(TargetDir)generated\openlyrics_version_generated.h
+      <Command>powershell $(SolutionDir)generate_version_header.ps1 -output_path $(TargetDir)generated\openlyrics_version_generated.h
 </Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
@@ -198,7 +198,7 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <PreBuildEvent>
-      <Command>pwsh $(SolutionDir)generate_version_header.ps1 -output_path $(TargetDir)generated\openlyrics_version_generated.h
+      <Command>powershell $(SolutionDir)generate_version_header.ps1 -output_path $(TargetDir)generated\openlyrics_version_generated.h
 </Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
