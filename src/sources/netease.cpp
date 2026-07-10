@@ -185,7 +185,7 @@ bool NetEaseLyricsSource::lookup(LyricDataRaw& data, abort_callback& abort)
         return false;
     }
 
-    std::string url = std::string(BASE_URL) + "/song/lyric?tv=-1&kv=-1&lv=-1&os=pc&id=" + data.lookup_id;
+    std::string url = std::string(BASE_URL) + "/song/lyric?tv=-1&os=pc&id=" + data.lookup_id;
     data.source_path = url;
     LOG_INFO("Get NetEase lyrics for song ID %s from %s...", data.lookup_id.c_str(), url.c_str());
 
@@ -208,6 +208,12 @@ bool NetEaseLyricsSource::lookup(LyricDataRaw& data, abort_callback& abort)
     if((json != nullptr) && (json->type == cJSON_Object))
     {
         cJSON* lrc_item = cJSON_GetObjectItem(json, "lrc");
+
+        if (lrc_item == nullptr)
+        {
+            lrc_item = cJSON_GetObjectItem(json, "tlyric");
+        }
+
         if((lrc_item != nullptr) && (lrc_item->type == cJSON_Object))
         {
             cJSON* lrc_lyric = cJSON_GetObjectItem(lrc_item, "lyric");
